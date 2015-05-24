@@ -3,6 +3,10 @@
 ## but is appropriate for the assignment
 
 ## Makes a matrix wrapper with functions get, set, getsolution, setsolution
+## get and set allow the values to be retrieved or changed
+## getsolution will retrieve the cached value
+## setsolution will set the cached value
+## Note: Calling set will invalidate the cached value
 
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
@@ -19,8 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Returns the cached solution if available, otherwise calculates, caches and
-## then returns the result
+## Given a "cache matrix", returns the cached solution if available, otherwise
+## calculates, caches and then returns the result
 
 cacheSolve <- function(x, ...) {
     s <- x$getsolution()
